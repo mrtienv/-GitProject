@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count Day</title>
+
+</head>
+<body>
+<form>
+    <input type="text" id="day"> <button type="button" onclick="countday()">Tính số ngày</button>
+    <p id="result"></p>
+</form>
+<script>
+    let a = parseInt(document.getElementById("day").value);
+
+    function countday() {
+        let a = parseInt(document.getElementById("day").value);
+        let b = 'Tháng '+a;
+        switch (a) {
+            case 2:
+                document.getElementById('result').innerHTML = b + ' có 28 hoặc 29 ngày';
+                break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById('result').innerHTML = b + ' có 31 ngày';
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById('result').innerHTML = b + ' có 30 ngày';
+                break;
+        }
+    }
+</script>
+</body>
+</html>
