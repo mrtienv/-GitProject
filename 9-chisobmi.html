@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi so BMI</title>
+</head>
+<body>
+<form>
+    <p>Nhập chiều cao (đơn vị mét)</p> <input id="height" type="text"><br>
+    <p>Nhập cân nặng (đơn vị kilogram)</p> <input id="weight" type="text"><br><br>
+    <button id="result" type="button" onclick="tinhbmi()">Kết quả là:</button>
+</form>
+
+<script>
+    let weight, height, bmi;
+
+    function tinhbmi() {
+    weight = parseFloat(document.getElementById("height").value);
+    height = parseFloat(document.getElementById("weight").value);
+    bmi = weight/(height*height);
+    if (bmi < 18.5) {
+        document.getElementById("result").innerHTML = 'Kết quả: Underweight';
+    }
+    else if (bmi < 25.0) {
+            document.getElementById("result").innerHTML = 'Kết quả: Normal';
+        }
+         else if (bmi < 30.0) {
+                document.getElementById("result").innerHTML = 'Kết quả: Overweight';
+    }
+                else {
+                    document.getElementById("result").innerHTML = 'Kết quả: Obese';
+    }
+    }
+    </script>
+</body>
+</html>
